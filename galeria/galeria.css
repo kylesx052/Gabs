@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') center center/cover no-repeat;
+  background-color: #d5c4aa;
+  color: #3e2f1c;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Vignette escurecendo as bordas */
+body::before {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.45) 100%);
+  z-index: 0;
+}
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: linear-gradient(to right, #6e4b2c, #a07c56);
+  color: #fff5e6;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 6.5rem;
+  font-family: 'Zeyada', cursive;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-style: italic;
+  font-size: 3.3rem;
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 50px;
+  padding: 4rem 3rem 6rem;
+  max-width: 1400px;
+  margin: auto;
+  position: relative;
+  z-index: 5;
+}
+
+.photo-frame {
+  position: relative;
+  background: #fef9f1;
+  border: 10px solid #c7a987;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  overflow: hidden;
+  padding: 16px;
+  transform: rotate(-1.8deg);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: default;
+  user-select: none;
+  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.2));
+}
+
+.photo-frame:nth-child(even) {
+  transform: rotate(1.6deg);
+}
+
+.photo-frame:hover {
+  transform: scale(1.07) rotate(0deg);
+  box-shadow: 0 24px 40px rgba(0,0,0,0.55);
+  filter: drop-shadow(5px 8px 8px rgba(0,0,0,0.3));
+  z-index: 10;
+}
+
+.photo-frame img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  filter: sepia(15%) contrast(1.1);
+  transition: filter 0.4s ease;
+  box-shadow: inset 0 0 6px rgba(255,255,255,0.9);
+  background: repeating-linear-gradient(
+    45deg,
+    #f9f6f1,
+    #f9f6f1 3px,
+    #efe8d7 3px,
+    #efe8d7 6px
+  );
+}
+
+.photo-frame:hover img {
+  filter: none;
+}
+
+.caption {
+  background: #f8e9cf;
+  margin-top: 1rem;
+  padding: 0.8rem 1.4rem;
+  font-family: 'Zeyada', cursive;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.1);
+  color: #5b3b21;
+  letter-spacing: 0.02em;
+  user-select: text;
+}
+
+/* Clips metálicos pendurando as fotos */
+.clip {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #a6a9ad, #737679);
+  border-radius: 6px 6px 0 0;
+  box-shadow: inset 0 3px 5px #c1c3c4, 0 3px 5px rgba(0,0,0,0.5);
+  position: absolute;
+  top: -14px;
+  z-index: 12;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.5));
+  transition: filter 0.3s ease;
+}
+
+.clip-top-left {
+  left: 10px;
+  transform: rotate(-12deg);
+}
+
+.clip-top-right {
+  right: 10px;
+  transform: rotate(14deg);
+}
+
+.photo-frame:hover .clip {
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.8));
+}
+
+/* Gotas de cera decorativas */
+.wax-drop {
+  position: absolute;
+  width: 18px;
+  height: 22px;
+  background: radial-gradient(circle at 8px 8px, #c98a1c, #a77310);
+  border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  top: 18px;
+  right: 18px;
+  filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.4));
+  transform: rotate(-15deg);
+  opacity: 0.75;
+  animation: waxShine 4s infinite ease-in-out;
+  z-index: 8;
+}
+
+@keyframes waxShine {
+  0%, 100% { opacity: 0.75; transform: rotate(-15deg) scale(1); }
+  50% { opacity: 0.95; transform: rotate(-10deg) scale(1.1); }
+}
+
+/* Folhas naturais */
+.leafy {
+  position: relative;
+}
+
+.leafy::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: -14px;
+  width: 60px;
+  height: 60px;
+  background: url('https://pngimg.com/uploads/autumn_leaves/autumn_leaves_PNG3633.png') no-repeat center/contain;
+  transform: rotate(-20deg);
+  opacity: 0.85;
+  filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.3));
+  pointer-events: none;
+  z-index: 5;
+}
+
+.leafy:nth-child(odd)::before {
+  left: auto;
+  right: -14px;
+  transform: rotate(25deg);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 2.6rem;
+  }
+  header p {
+    font-size: 1.1rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 3rem 1.5rem 4rem;
+  }
+  .photo-frame {
+    padding: 12px;
+    border-width: 7px;
+  }
+  .caption {
+    font-size: 1.3rem;
+    padding: 0.6rem 1rem;
+  }
+  .clip {
+    width: 20px;
+    height: 20px;
+    top: -10px;
+  }
+  .wax-drop {
+    width: 14px;
+    height: 18px;
+    top: 12px;
+    right: 12px;
+  }
+  .leafy::before {
+    width: 48px;
+    height: 48px;
+    bottom: -10px;
+    left: -10px;
+  }
+  .voltar-principal {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #ff5e7e;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.voltar-principal:hover {
+  background-color: #e94b6c;
+}
+}

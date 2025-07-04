@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Gabrielle 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe6f0, #fceaff);
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .container {
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 25px;
+      padding: 3rem;
+      max-width: 850px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      border: 2px solid #ffb6c1;
+      position: relative;
+    }
+
+    .title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 2rem;
+    }
+
+    .message {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: #333;
+      text-align: justify;
+      white-space: pre-line;
+    }
+
+    .footer {
+      text-align: right;
+      margin-top: 2.5rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .assinatura {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: #e83e8c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Brilhos suaves */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, #ffb6c1 1px, transparent 1px);
+      background-size: 30px 30px;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    .voltar-principal {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #ff5e7e;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.voltar-principal:hover {
+  background-color: #e94b6c;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="title">Para a minha Gabrielle 💖</h1>
+      <p class="message">
+        Gabrielle, minha linda, meu amor, minha vida...
+
+        Desde que você chegou, tudo mudou. Cada amanhecer tem mais cor, cada noite tem mais paz, e cada batida do meu coração tem mais sentido.
+        Você é como poesia viva, uma melodia doce que toca no fundo da alma.
+
+        O seu sorriso tem o poder de transformar o meu mundo inteiro.
+        Seu olhar é abrigo, é conforto, é lar. Eu vejo em você tudo o que sempre desejei.
+        Você é minha calmaria no caos, minha certeza em meio às dúvidas, meu carinho constante.
+
+        Amar você é viver um sonho acordado. É querer fazer tudo dar certo, é desejar que o tempo pare quando estou com você.
+        É querer cuidar, proteger e estar presente em todos os momentos — até nos mais simples.
+
+        Gabrielle, eu te amo com tudo o que sou. Te amo com um amor puro, sincero, bonito.
+        E quero que saiba: estarei ao seu lado em todos os dias, com todo o meu coração.
+
+        Obrigado por me permitir te amar. Obrigado por ser meu tudo.
+
+        Para sempre seu, com todo o amor do mundo. 💗
+      </p>
+      <div class="footer">
+        Com amor eterno,<br>
+        <span class="assinatura">Adrian 💌</span>
+      </div>
+      <a href="../index.html" class="voltar-principal">← Voltar para a página inicial</a>
+    </div>
+  </div>
+</body>
+</html>
